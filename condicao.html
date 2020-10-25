@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Condição</title>
+</head>
+<body>
+    <h1>Primeiro Número:</h1>
+    <input type="number" name="A" id="A">
+    <h1>Segundo Número:</h1>
+    <input type="number" name="B" id="B">
+    <input type="button" value="clicar" onclick="clicar()">
+    <div id="res">Caso seu número seja igual séra soma!<br>
+    Caso seja diferente séra multiplicado!</div>
+    <script>
+        function clicar(){
+            var v1 = Number.parseInt(window.document.getElementById('A'))
+            var v2 = Number.parseInt(window.document.getElementById('B'))
+            var res = window.document.getElementById('res')
+            var n1=Number(v1.value)
+            var n2=Number(v2.value)
+            var atribuição = n1+n2 
+            var multi=n1*n2
+            var c1=String(multi.value)
+            var c2=String(atribuição.value)
+            if ('c1'=='c2'){
+                res.innerHTML=`O valor de C é ${atribuição}`
+                
+            }
+            else if('c1'!='c2'){
+                res.innerHTML=`O valor de C é ${multi}`
+            }
+               
+             
+                       
+        }
+    </script>
+
+</body>
+</html>
