@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cardápio</title>
+</head>
+<style>
+    select#listam{
+        width: 200px;
+    }
+</style>
+<body>
+    <h1>  Cardápio do dia:</h1>
+    <h2>Código - Produto - Preço Unitário (R$)</h2>
+    <p>100 - Cachorro quente - 1,70</p>
+    <p>101 - Bauru Simples - 2,30</p>
+    <p>102 - Bauru com ovo - 2,60</p>
+    <p>103 - Hamburhuer - 2,40</p>
+    <p>104 - Cheeseburguer - 2,50</p>
+    <p>105 - Refrigerante - 1,00</p>
+    Numero do código:
+    <input type="number" name="numero" id="num">
+    <input type="button" value="adicionar" onclick="adicionar()">
+    <select name="listam" id="listam" size="10"></select>
+    <input type="button" value="Pronto" onclick="pronto()">
+    <div id="res"></div>
+    
+
+    <script>
+        let num = window.document.getElementById('numero')
+        let lista=window.document.getElementById('listam')
+        let res =window.document.getElementById('res')
+        let valores=[]
+        while (num==100){
+            var item1=1.70
+        }
+        while (num==101){
+            var item2=2.30
+        }
+        while(num==102){
+            var item=2.60
+            }
+        while(num==103){
+            var item4=2.40
+        }
+        while(num==104){
+            var item5=2.50
+
+        }
+        while (num==105){
+            var item6=1.00
+        }
+        function adicionar() {
+            if(isNumero(num.value) && !inLista(num.value,valores)){
+                valores.push(Number(num.value))
+                let item=document.createElement('option')
+                item.text=`Valor adicionado ${num.value}`
+                lista.appendChild(item)
+                res.innerHTML=''
+
+            }
+            else {
+               res.innerHTML=''
+
+            }
+        num.value=''
+        num.focus()
+
+        }
+        function finalizar() {
+            if (valores == 0){
+                window.alert=('Adicione um número.')
+            }
+            else{
+                let total = valores
+                let soma=0
+                for(let pos in valores){
+                    soma+=valores[pos]
+                }
+            }
+        }
+
+                res.innerHTML=''
+                res.innerHTML+=`<p> Ao todo temos ${total} itens.</p>`
+                res.innerHTML+=`<p> A soma dos valores é ${soma}.<p>`
+
+    </script>
+    
+</body>
+</html>
