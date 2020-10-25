@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestação </title>
+</head>
+<body>
+    <h1>Produto: </h1>
+        <input type="text" name="produto" id="produto" > 
+    <h1>Valor:</h1>
+        <input type="number" name="valor" id="valor" > 
+    <h1>Parcelas:</h1>
+        <input type="number" name="parcelas" id="parcelas">
+        <input type="button" value="Ver" onclick="ver()">
+        <div id="res">Resultado</div>
+        <script> 
+            function ver(){
+                var p = window.document.getElementById('produto')
+                var v1 = window.document.getElementById('valor')
+                var parc=window.document.getElementById('parcelas')
+                var p1 = Number(parc.value)
+                var n1 = Number(v1.value)
+                var res= window.document.getElementById('res')
+                if (p1 ==1){
+                    res.innerHTML=`Pagamento a vista R$ ${n1}`
+                }else if (p1==3){
+                    var s1=n1*0.10
+                    var v2= n1+s1
+                    res.innerHTML=`Seu produto foi parcelado em ${p1},<br>
+                    seu valor atual é R$ ${v2}`
+                }else if(p1==5){
+                    var s2=n1*0.20
+                    var v3=n1+s2
+                    res.innerHTML=`Seu produto foi parcelado em ${p1},<br>
+                    seu valor atual é R$ ${v3}`
+                }
+
+            }
+        </script>
+</body>
+</html>
