@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Código de Seleção</title>
+</head>
+<body>
+    <h2>Primeiro número:</h2>
+        <input type="number" name="txtn1" id="txtn1"/>
+    <h2>Segundo número:</h2>
+        <input type="number" name="txtn2" id="txtn2"/>
+    <h2>Escolha um número:</h2>
+        <input type="number" name="cod" id="cod"/>
+        <input type="button" value="cliclar" onclick="clicar()"/>
+        <div id='res'>Resultado</div>
+    <script>
+        function clicar(){
+        var txn1= Number.parseFloat(document.querySelector('txtn1'))
+        var txn2= Number.parseFloat(document.getElementById('txtn2'))
+        var cod1=Number.parseInt(document.getElementById('cod'))
+        var res= window.document.getElementById('res')
+
+        if(cod1==1){
+            res.innerHTML=`O valores números escolhidos foram:<br>
+            ${txn1} e ${txn2}`
+
+        }else if(cod1==2){
+            var multi=txn1*txn2
+            res.innerHTML=`${multi}`
+
+
+        }
+        else if(cod1==3){
+            var divs=txn1/txn2
+            res.innerHTML=`${divs}`
+        }
+        }
+
+    </script>
+</body>
+</html>
